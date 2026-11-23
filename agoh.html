@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Website</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div id="container">
+        <header>
+            <h1>Nick Turner</h1>
+
+            <nav>
+            <ul>
+                <li><a href="index.html">About</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="#">CV</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        </header>
+
+        <main>
+            <h2>A Grain of Hope</h2>
+			<p>This is a short film I built together with a team from September 2025 to May 2026.</p>
+			<video width="848" height="480" controls >
+			    <source src="videos/agoh.mp4" type="video/mp4">
+		    </video>
+
+			<h2>Production</h2>
+			<h3>Models</h3>
+			<p>Most of the environment and prop models were made by me, like the windmill and chicken coop. I used Substance Painter for the texturing.</p>
+			<div class="image-container">
+				<img src="images/agoh_coop.png" alt="">
+				<img src="images/agoh_inside.png" alt="">
+			</div>
+			<h3>Environment</h3>
+			<p>I built the main prop models in Blender as this was the software I work fastest in. Textures were done in Substance Painter.</p>
+			<p>Scene assembly was done entirely in Houdini, as well as procedural generation and scattering of grass.</p>
+			<div class="image-container">
+				<img src="images/agoh_outside_1.png" alt="">
+				<img src="images/agoh_outside_2.png" alt="">
+			</div>
+			<h3>Animation</h3>
+			<p>I did not do any animation myself, however, I did work on the software pipeline, which made it easier to sync assets between scenes, allowing them to be iteratively modeled and placed into the animated scene faster.</p>
+			<p> This was achieved through use of USD, which is well integrated with Houdini's Solaris scene assembly tool. This allows an asset to be non-destructively linked, such that you can update the file, and this will automatically apply changes everywhere.</p>
+			<p>The chicken coop, windmill, and the straw benefitted most from this, as getting them to look right and match the animation was an iterative process with a lot of refinement needed.</p>
+			<div class="image-container">
+				<img src="images/agoh_floor.png" alt="">
+				<img src ="images/agoh_grain.png">
+			</div>
+			<h3>Rendering</h3>
+			<p>Rendering was one of the most time consumning parts of the project. We used Karma, the built in Houdini renderer, for this.</p>
+			<h2>Breakdown Video</h2>
+			<video width="848" height="480" controls >
+			    <source src="videos/Breakdown_Reel.mp4" type="video/mp4">
+		    </video>
+
+
+			<h2>Credits</h2>
+			<h3>Team Members</h3>
+			<ul>
+				<li>Paula Laverty - Creative Direction, Concept Art, Animation, Modelling</li>
+				<li>Nick Turner - Environment and Hard Surface Modelling, Procedural Generation, Compositing, Research and Development</li>
+				<li>Ellie Tarrant - Animation, Sculpting, Modelling, Rigging</li>
+				<li>Cara Mannix - Animation, Sculpting, Modelling, Fur Groom, Rigging</li>
+			</ul>
+
+			<h3>Supervisors</h3>
+			<ul>
+				<li>Eike Anderson</li>
+				<li>Rehan Zia</li>
+			</ul>
+
+			<h3>Special Thanks</h3>
+			<ul>
+				<li>Isabella Laverty - Music</li>
+				<li>Chris Hosken - Technical Support</li>
+				<li>Dominic Cowling - Technical Support</li>
+			</ul>
+        </main>
+
+        <footer>
+            &copy; All rights reserved.
+        </footer>
+    </div>
+
+</body>
+</html>

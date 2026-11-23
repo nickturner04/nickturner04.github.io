@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Website</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div id="container">
+        <header>
+            <h1>Nick Turner</h1>
+
+            <nav>
+            <ul>
+                <li><a href="index.html">About</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="cv.pdf">CV</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        </header>
+
+        <main>
+            <h2>Multiplayer Development</h2>
+
+			<p>This is a project I undertook to learn how multiplayer games work.</p>
+		    <p>My goal was to create a small playable demo similar to a Quake game, but it later evolved in me wanting to design my own multiplayer shooter.</p>
+			<h3>Unity Development</h3>
+			<p>To begin I built a custom network protocol in Unity.</p>
+			<p>Because I wanted to keep the server code small, deterministic and not dependent on any Unity state, anything using the actual Unity scene graph would be a view layer constructed from the world state, driven by it instead of being the driver.</p>
+			<p>The main problem with this though, was that to achieve architectural purity, I basically had to construct a mini engine inside of Unity, and give up inspector support, drag and drop composition, and all the other things that make single player development in Unity so nice. This meant I inherited a lot of downsides in the Unity workflow without the good parts to make up for it.
+                And in order to finish the project, I would have to reimplement mesh-based collisions, physics, and similar subsytems. The current state was fine for a small demo, but I wanted to evolve it into a real game, and I found this architecture too hard to maintain.
+            </p>
+
+            <div class="image-container">
+                <img src="images/mult_unity.png">
+                <video width="400" height="300" controls>
+                    <source src="videos/mult_unity.mp4" type="video/mp4">
+                </video>
+            </div>
+			
+			<h3>Custom Engine Research</h3>
+            <p>I decided to search the web for smaller, open-source engines already built for multiplayer shooters instead.</p>
+			<h4>Warfork</h4>
+			<p>The first engine I looked at was Warfork-QFusion. This looked perfect due to already being based on Quake III, and being used to create a smooth, fast paced arena shooter.</p>
+            <p>There was about six months between me dropping the Unity project and picking it up again, and in this time, Vibe Coding (programming using AI agents) had become popular.</p>
+            <p>Looking at Warfork's actual code, while the rendering and input layer were modern. The actual gameplay backend as well as networking was basically identical to Quake III. This made it extremely non-extensible. Due to this, actually creating new weapons, gamemodes, or systems, required touching a lot of different files where things had been hard-coded.</p>
+            <p>To turn this into an easy to modify game, I planned to create some kind of Object-Oriented layer on top of the existing systems, to handle weapons, and also capable of serializing arbitraty fields.</p>
+            <p>I tried using AI to speed up writing a lot of this code, but I only found that I was fighting against the architecture of the engine and making it very difficult to potentially pull bug fixes from upstream.</p>
+            <p>I also found that it was hard to get AI to stick to my surgical approach of leaving the core of the engine the same while adding extension modules on top. It would frequently cause changes that need cascading rewrites of multiple modules.</p>
+            <p>Becuase of this I looked for a new engine which would allow me to write a game with fewer rewrites, whether the code AI generated or not.</p>
+			<h4>Nuclide SDK</h4>
+            <p>This is a game development framework build on top of FTEQW, a modern quake-like engine. I preferred this over Warfork's engine, because it is written in a modernized version of the QuakeC scripting language, but also is completely divorced from any original Quake codebase, being a modern reimplementation of similar gameplay.<p>
+		</main>
+
+        <footer>
+            &copy; All rights reserved.
+        </footer>
+    </div>
+
+</body>
+</html>

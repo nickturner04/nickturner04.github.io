@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Website</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div id="container">
+        <header>
+            <h1>Nick Turner</h1>
+
+            <nav>
+            <ul>
+                <li><a href="index.html">About</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="cv.pdf">CV</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        </header>
+
+        <main>
+            <h2>Top Down Shooter</h2>
+			<video width="848" height="480" controls >
+			    <source src="../videos/placeholder.mp4" type="video/mp4">
+		    </video>
+            <p>TODO: Gameplay video</p>
+
+			<p>This is a 3D action game where you control a soldier and fight waves of enemies. I initially built it as a stealth game, but I found the moments of action when you get caught more fun than the sneaking.</p>
+            <div class="image-container">
+                <img src="images/shooter_gameplay.png">
+                <img src="images/shooter_gameplay_2.png">
+            </div>
+            <p>Although programming most of the systems was quite straight forward, I eventually stopped working on this because I found Unity's Navigation package was too limited to build smart enemy behaviour with.</p>
+            <p>If I wanted smart enemies I would have to reimplement navmeshes, pathfinding, and lots of other things from scratch, and I found that time would be better spent working on new projects.</p>
+        
+            <p>I also built some of the 3D models used in this game.</p>
+            <div class="image-container">
+                <img src="images/sa80_render.png">
+                <img src="images/shooter_brick.png">
+                <img src="images/shooter_pistol.png">
+            </div>
+        </main>
+
+        <footer>
+            &copy; All rights reserved.
+        </footer>
+    </div>
+
+</body>
+</html>
